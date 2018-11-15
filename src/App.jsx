@@ -72,9 +72,9 @@ class App extends React.Component {
     const { location } = this.props;
     const vertNavItems = this.menu.map(item => {
       const active = location.pathname === item.to;
-      const subItemActive = item.subItems && item.subItems.some(
-        item => location.pathname === item.to
-      );
+      const subItemActive =
+        item.subItems &&
+        item.subItems.some(item => location.pathname === item.to);
       return (
         <VerticalNavItem
           key={item.to}
@@ -133,13 +133,6 @@ class App extends React.Component {
             </VerticalNavIconBar>
           </VerticalNavMasthead>
           {vertNavItems}
-          {/* <VerticalNavItem
-            key="abc"
-            title="Ipsum"
-            iconClass="fa fa-dashboard"
-            active
-            onClick={() => this.navigateTo('/')}
-          /> */}
         </VerticalNav>
         {this.renderContent()}
       </React.Fragment>
